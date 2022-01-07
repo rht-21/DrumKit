@@ -1,2 +1,2 @@
-# DrumKit
+# Drum Kit
 Play Drum Online! 😎
