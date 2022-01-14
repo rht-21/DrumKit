@@ -11,11 +11,13 @@ function Response() {
 }
 
 document.addEventListener("keypress", function (event) {
-  makeSound(event.key);
-  getAnimation(event.key);
+  let keyPressed = event.key.toLowerCase();
+  makeSound(keyPressed);
+  getAnimation(keyPressed);
 });
 
 function makeSound(key) {
+
   switch (key) {
     case "w":
       var sound = new Audio("sounds/tom-1.mp3");
@@ -48,41 +50,6 @@ function makeSound(key) {
       break;
 
     case "l":
-      var sound = new Audio("sounds/kick.wav");
-      sound.play();
-      break;
-
-    case "W":
-      var sound = new Audio("sounds/tom-1.mp3");
-      sound.play();
-      break;
-
-    case "A":
-      var sound = new Audio("sounds/tom-2.mp3");
-      sound.play();
-      break;
-
-    case "S":
-      var sound = new Audio("sounds/tom-3.mp3");
-      sound.play();
-      break;
-
-    case "D":
-      var sound = new Audio("sounds/tom-4.mp3");
-      sound.play();
-      break;
-
-    case "J":
-      var sound = new Audio("sounds/snare.wav");
-      sound.play();
-      break;
-
-    case "K":
-      var sound = new Audio("sounds/crash.mp3");
-      sound.play();
-      break;
-
-    case "L":
       var sound = new Audio("sounds/kick.wav");
       sound.play();
       break;
