@@ -1,6 +1,6 @@
 var NumberofDrums = document.querySelectorAll(".drum").length;
 
-for(var i=0; i<NumberofDrums; i++) {
+for (var i = 0; i < NumberofDrums; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", Response);
 }
 
@@ -10,14 +10,13 @@ function Response() {
   getAnimation(buttonpress);
 }
 
-document.addEventListener("keypress", function (event){
+document.addEventListener("keypress", function (event) {
   makeSound(event.key);
   getAnimation(event.key);
 });
 
 function makeSound(key) {
-  switch(key)
-  {
+  switch (key) {
     case "w":
       var sound = new Audio("sounds/tom-1.mp3");
       sound.play();
@@ -53,6 +52,41 @@ function makeSound(key) {
       sound.play();
       break;
 
+    case "W":
+      var sound = new Audio("sounds/tom-1.mp3");
+      sound.play();
+      break;
+
+    case "A":
+      var sound = new Audio("sounds/tom-2.mp3");
+      sound.play();
+      break;
+
+    case "S":
+      var sound = new Audio("sounds/tom-3.mp3");
+      sound.play();
+      break;
+
+    case "D":
+      var sound = new Audio("sounds/tom-4.mp3");
+      sound.play();
+      break;
+
+    case "J":
+      var sound = new Audio("sounds/snare.wav");
+      sound.play();
+      break;
+
+    case "K":
+      var sound = new Audio("sounds/crash.mp3");
+      sound.play();
+      break;
+
+    case "L":
+      var sound = new Audio("sounds/kick.wav");
+      sound.play();
+      break;
+
     default:
       break;
   }
@@ -61,7 +95,7 @@ function makeSound(key) {
 function getAnimation(currentKey) {
   var activeButton = document.querySelector("." + currentKey);
   activeButton.classList.add("pressed");
-  setTimeout(function() {
+  setTimeout(function () {
     activeButton.classList.remove("pressed");
   }, 100);
 }
